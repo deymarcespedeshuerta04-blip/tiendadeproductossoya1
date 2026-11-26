@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rompecabezas de 15 Piezas con Imagen de Productos — Raiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🌱</div>
+        <div>
+          <div class="logo-text">Ra<span>iz</span></div>
+          <span class="logo-sub">Rompecabezas de 15 Piezas</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html#catalogo">Productos</a>
+        <a href="index.html#recetas">Recetas</a>
+        <a href="index.html#empresas-soya-sc">Empresas SC</a>
+        <a href="index.html#nosotros">Nosotros</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container puzzle15-page">
+    <div class="puzzle15-topbar">
+      <div>
+        <span class="badge badge-primary">🧩 15 Piezas de Imagen • Productos Raiz</span>
+        <h1 style="margin-top:6px;font-size:1.55rem;">Rompecabezas de 15 piezas con imagen de productos</h1>
+        <p style="color:var(--text-muted);font-size:0.88rem;">Arrastra o haz clic en cada una de las 15 piezas de imagen para unirlas y formar una sola imagen completa.</p>
+      </div>
+      <div class="puzzle15-controls">
+        <span class="puzzle15-badge-count" id="p15Count">0 / 15 en su lugar</span>
+        <select id="p15ImageSelect" class="form-select" style="width:auto;padding:8px 12px;" aria-label="Elegir imagen de producto">
+          <option value="img/collage-productos-soya.svg">Catálogo Productos Soya (Imagen Unificada)</option>
+          <option value="img/LECHE DE SOYA.jfif">Leche de Soya Natural (../img/LECHE DE SOYA.jfif)</option>
+          <option value="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeBTwVe46KANuJzMnPkUI-_w6OoSIH-KUTnjmREgaeCg&s=10">Hamburguesa de Soya Artesanal</option>
+          <option value="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=900&q=80">Soya Tostada Crujiente</option>
+          <option value="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=900&q=80">Galletas de Soya Artesanales</option>
+          <option value="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=80">Tofu Artesanal de Soya</option>
+        </select>
+        <button type="button" class="btn btn-primary" id="p15ShuffleBtn">Mezclar 15 piezas</button>
+        <button type="button" class="btn btn-outline" id="p15SolveBtn">Armar imagen</button>
+      </div>
+    </div>
+
+    <div class="puzzle15-main-grid">
+      <div>
+        <div class="puzzle15-board" id="p15Board"></div>
+        <div class="puzzle15-win-box" id="p15WinBox">
+          ¡Imagen armada! Las 15 piezas se han unido para formar una sola imagen completa de los productos Raiz.
+        </div>
+      </div>
+
+      <aside>
+        <div class="puzzle15-side-card">
+          <h2>Piezas de imagen (15 unidades)</h2>
+          <div class="puzzle15-tray" id="p15Tray"></div>
+        </div>
+
+        <div class="puzzle15-side-card">
+          <h2>Imagen completa de guía</h2>
+          <img id="p15GuideImg" src="collage-productos-soya.svg" alt="Guía de imagen completa del producto" class="puzzle15-ref-img" />
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="rompecabezas.js"></script>
+</body>
+</html>

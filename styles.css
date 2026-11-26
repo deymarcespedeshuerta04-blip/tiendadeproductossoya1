@@ -1,0 +1,1629 @@
+/* ==========================================================================
+   1. VARIABLES CSS & ESTILOS BASE
+   ========================================================================== */
+:root {
+    --primary-50: #f0fdf4;
+    --primary-100: #dcfce7;
+    --primary-200: #bbf7d0;
+    --primary-500: #22c55e;
+    --primary-600: #16a34a;
+    --primary-700: #15803d;
+    --primary-800: #166534;
+    --primary-900: #14532d;
+
+    --cream-50: #fdfbf7;
+    --cream-100: #f7f3e9;
+    --cream-200: #efe6d5;
+
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --bg-white: #ffffff;
+
+    --border-radius-sm: 8px;
+    --border-radius-md: 16px;
+    --border-radius-lg: 24px;
+    --border-radius-full: 9999px;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 30px rgba(22, 163, 74, 0.15);
+
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--cream-50);
+    color: var(--text-main);
+    line-height: 1.5;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Scrollbar Personalizado */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cream-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-600);
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   2. UTILIDADES & BOTONES
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: var(--border-radius-md);
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-600);
+    color: white;
+    box-shadow: 0 4px 14px rgba(22, 163, 74, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-700);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.4);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: white;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+    width: 100%;
+    padding: 14px;
+    font-size: 1.05rem;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1eb956;
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background-color: var(--bg-white);
+    color: var(--text-main);
+    border: 1px solid #e5e7eb;
+}
+
+.btn-outline:hover {
+    background-color: var(--cream-100);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: var(--border-radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-primary {
+    background-color: var(--primary-100);
+    color: var(--primary-800);
+}
+
+/* ==========================================================================
+   3. HEADER & NAVEGACIÓN
+   ========================================================================== */
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--primary-100);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--primary-600), var(--primary-500));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span {
+    color: var(--primary-600);
+}
+
+.logo-sub {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-700);
+    font-weight: 700;
+    margin-top: -4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--primary-600);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cart-trigger {
+    position: relative;
+    background-color: var(--primary-50);
+    color: var(--primary-800);
+    padding: 10px 18px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--primary-100);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition);
+}
+
+.cart-trigger:hover {
+    background-color: var(--primary-100);
+}
+
+.cart-count-badge {
+    background-color: var(--primary-600);
+    color: white;
+    border-radius: var(--border-radius-full);
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-main);
+}
+
+/* Nav Mobile Menu */
+.mobile-menu {
+    display: none;
+    background-color: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 20px;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 600;
+    display: block;
+    padding: 8px 0;
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.hero {
+    padding: 60px 0 80px;
+    background: linear-gradient(180deg, rgba(240, 253, 244, 0.6) 0%, rgba(253, 251, 247, 0) 100%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-top: 12px;
+    margin-bottom: 20px;
+    color: var(--text-main);
+}
+
+.hero-title span {
+    color: var(--primary-600);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--cream-200);
+}
+
+.stat-val {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-main);
+    display: block;
+}
+
+.stat-lbl {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.hero-image-wrapper {
+    position: relative;
+}
+
+.hero-image-card {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    padding: 12px;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid white;
+    overflow: hidden;
+}
+
+.hero-image-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: calc(var(--border-radius-lg) - 8px);
+    display: block;
+}
+
+/* ==========================================================================
+   5. BENEFICIOS
+   ========================================================================== */
+.features {
+    padding: 80px 0;
+    background-color: var(--bg-white);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-top: 8px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.feature-card {
+    background-color: var(--cream-50);
+    border: 1px solid var(--cream-200);
+    padding: 36px 28px;
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    background-color: white;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-100);
+    color: var(--primary-700);
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   6. CATÁLOGO DE PRODUCTOS
+   ========================================================================== */
+.catalog {
+    padding: 80px 0;
+}
+
+.catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    font-size: 0.88rem;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+    background-color: white;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: var(--primary-600);
+    color: white;
+    border-color: var(--primary-600);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    border: 1px solid #f1f5f9;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.product-img-wrapper {
+    height: 210px;
+    position: relative;
+    background-color: var(--cream-100);
+    overflow: hidden;
+}
+
+.product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: var(--primary-800);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: var(--border-radius-full);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.product-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.product-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    flex-grow: 1;
+}
+
+.product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.product-price {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary-700);
+}
+
+.btn-add-cart {
+    padding: 10px 16px;
+    background-color: var(--primary-600);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+}
+
+.btn-add-cart:hover {
+    background-color: var(--primary-700);
+}
+
+.empty-catalog {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+    border-radius: var(--border-radius-lg);
+    color: var(--text-muted);
+    border: 1px dashed #d1d5db;
+}
+
+/* ==========================================================================
+   7. SIDEBAR DE CARRITO
+   ========================================================================== */
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.cart-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    max-width: 440px;
+    height: 100%;
+    background-color: white;
+    z-index: 51;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.active {
+    transform: translateX(0);
+}
+
+.cart-header {
+    padding: 20px;
+    background-color: var(--primary-50);
+    border-bottom: 1px solid var(--primary-100);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-cart:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.cart-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 16px;
+    padding: 14px;
+    background-color: var(--cream-50);
+    border-radius: var(--border-radius-md);
+    margin-bottom: 14px;
+    border: 1px solid var(--cream-200);
+    align-items: center;
+}
+
+.cart-item-img {
+    width: 64px;
+    height: 64px;
+    border-radius: var(--border-radius-sm);
+    object-fit: cover;
+}
+
+.cart-item-details {
+    flex-grow: 1;
+}
+
+.cart-item-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.cart-item-price {
+    font-size: 0.85rem;
+    color: var(--primary-700);
+    font-weight: 700;
+}
+
+.cart-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.qty-btn {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    border: 1px solid #d1d5db;
+    background: white;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.remove-item {
+    color: #ef4444;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+.cart-footer {
+    padding: 20px;
+    border-top: 1px solid #e5e7eb;
+    background-color: var(--bg-white);
+}
+
+.cart-summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.cart-subtotal-val {
+    font-weight: 700;
+}
+
+.cart-total-line {
+    font-size: 1.2rem;
+    font-weight: 800;
+    border-top: 1px dashed #e5e7eb;
+    padding-top: 12px;
+    margin-top: 12px;
+    color: var(--primary-800);
+}
+
+.btn-checkout-trigger {
+    margin-top: 16px;
+}
+
+.cart-empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-muted);
+}
+
+.cart-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+/* ==========================================================================
+   8. MODALES (CHECKOUT & CONFIGURACIÓN)
+   ========================================================================== */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.modal-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    color: var(--text-main);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid #d1d5db;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--primary-600);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+.btn-modal-submit {
+    margin-top: 10px;
+}
+
+.btn-modal-full {
+    width: 100%;
+}
+
+.btn-modal-cancel {
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* ==========================================================================
+   9. FOOTER & TOAST
+   ========================================================================== */
+.footer {
+    background-color: #111827;
+    color: #9ca3af;
+    padding: 60px 0 30px;
+    margin-top: auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+.footer-title {
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--primary-500);
+}
+
+.footer-config-text {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+}
+
+.btn-config-whatsapp {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+}
+
+.footer-bottom {
+    border-top: 1px solid #1f2937;
+    padding-top: 24px;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background-color: #1f2937;
+    color: white;
+    padding: 14px 24px;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    font-size: 0.9rem;
+    z-index: 100;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.toast.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   10. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-description {
+        margin: 0 auto 30px;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .hero-title {
+        font-size: 2.3rem;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   11. BENEFICIOS POR PRODUCTO EN CATÁLOGO
+   ========================================================================== */
+.product-benefits-box {
+    background-color: var(--primary-50);
+    border: 1px solid var(--primary-100);
+    border-radius: var(--border-radius-sm);
+    padding: 10px 12px;
+    margin-bottom: 16px;
+}
+
+.product-benefits-title {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary-800);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.product-benefits-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.product-benefits-list li {
+    font-size: 0.78rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    line-height: 1.35;
+}
+
+.product-benefits-list li::before {
+    content: "✓";
+    color: var(--primary-600);
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+/* Guía detallada de beneficios debajo de la grilla de productos */
+.soy-benefits-guide {
+    margin-top: 56px;
+    padding-top: 44px;
+    border-top: 2px solid var(--primary-100);
+}
+
+.soy-guide-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 32px;
+}
+
+.soy-guide-header h3 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-top: 8px;
+}
+
+.soy-guide-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 6px;
+}
+
+.soy-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.soy-guide-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--primary-100);
+    border-left: 4px solid var(--primary-600);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.soy-guide-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+
+.soy-guide-card h4 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--primary-900);
+}
+
+.soy-guide-price {
+    font-size: 0.85rem;
+    font-weight: 800;
+    background-color: var(--primary-100);
+    color: var(--primary-800);
+    padding: 3px 10px;
+    border-radius: var(--border-radius-full);
+    white-space: nowrap;
+}
+
+.soy-guide-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   12. SECCIÓN RECETAS POR PRODUCTO DEL CATÁLOGO
+   ========================================================================== */
+.recipes-section {
+    padding: 80px 0;
+    background-color: var(--bg-white);
+    border-top: 1px solid var(--primary-100);
+    border-bottom: 1px solid var(--primary-100);
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+}
+
+.recipe-card {
+    background-color: var(--cream-50);
+    border: 1px solid var(--cream-200);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-white);
+}
+
+.recipe-card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    background-color: var(--primary-50);
+    border-bottom: 1px solid var(--primary-100);
+}
+
+.recipe-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--border-radius-md);
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: var(--shadow-sm);
+    flex-shrink: 0;
+}
+
+.recipe-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.recipe-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: var(--border-radius-full);
+    background-color: white;
+    color: var(--primary-800);
+    border: 1px solid var(--primary-200);
+}
+
+.recipe-card-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--primary-900);
+    line-height: 1.25;
+}
+
+.recipe-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-grow: 1;
+}
+
+.recipe-block-title {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary-700);
+    margin-bottom: 6px;
+}
+
+.recipe-ingredients-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.recipe-ingredients-list li {
+    font-size: 0.84rem;
+    color: var(--text-main);
+    padding-left: 14px;
+    position: relative;
+}
+
+.recipe-ingredients-list li::before {
+    content: "•";
+    color: var(--primary-600);
+    font-weight: 800;
+    position: absolute;
+    left: 0;
+}
+
+.recipe-steps-list {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.recipe-steps-list li {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+
+.recipe-steps-list li strong {
+    color: var(--text-main);
+}
+
+.recipe-card-footer {
+    padding: 14px 20px;
+    border-top: 1px solid var(--cream-200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ==========================================================================
+   13. CÓDIGO QR CON MONTO EN BS Y ENVÍO A WHATSAPP
+   ========================================================================== */
+.btn-qr-cart {
+    width: 100%;
+    margin-top: 12px;
+    border-color: var(--primary-600);
+    color: var(--primary-800);
+    background-color: var(--primary-50);
+}
+
+.btn-qr-cart:hover {
+    background-color: var(--primary-100);
+}
+
+.qr-actions-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.qr-preview-box {
+    background-color: var(--cream-50);
+    border: 1px dashed var(--primary-600);
+    border-radius: var(--border-radius-md);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+#qrcodeCanvas {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+}
+
+#qrcodeCanvas img,
+#qrcodeCanvas canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+.qr-amount-badge {
+    background-color: var(--primary-100);
+    color: var(--primary-900);
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 6px 14px;
+    border-radius: var(--border-radius-full);
+}
+
+.qr-payload-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    word-break: break-word;
+    max-width: 100%;
+}
+
+
+.qr-generated-img {
+    max-width: 190px;
+    width: 100%;
+    height: auto;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-sm);
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* ==========================================================================
+   14. EMPRESAS DE PRODUCTOS DE SOYA EN SANTA CRUZ
+   ========================================================================== */
+.soy-companies-section {
+    padding: 80px 0;
+    background-color: var(--cream-50);
+    border-top: 1px solid var(--cream-200);
+}
+
+.sc-companies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 22px;
+}
+
+.sc-company-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--primary-100);
+    border-radius: var(--border-radius-md);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.sc-company-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.sc-company-name {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--primary-900);
+}
+
+.sc-company-products {
+    font-size: 0.86rem;
+    color: var(--text-main);
+}
+
+.sc-company-location {
+    font-size: 0.84rem;
+    color: var(--text-muted);
+    padding-top: 8px;
+    border-top: 1px dashed var(--cream-200);
+}
+
+
+/* ==========================================================================
+   QR ESTÁTICO EN CHECKOUT WHATSAPP
+   ========================================================================== */
+.checkout-static-qr-box {
+    background: var(--primary-50);
+    border: 1.5px dashed var(--primary-600);
+    border-radius: var(--border-radius-md);
+    padding: 14px;
+    margin-bottom: 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.checkout-static-qr-box.hidden {
+    display: none;
+}
+
+.checkout-qr-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-900);
+}
+
+.checkout-qr-img {
+    width: 165px;
+    height: 165px;
+    object-fit: contain;
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 12px;
+    border: 1px solid var(--primary-200);
+    box-shadow: var(--shadow-sm);
+}
+
+.checkout-qr-total {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--primary-800);
+    background: var(--primary-100);
+    padding: 4px 12px;
+    border-radius: var(--border-radius-full);
+}
+
+/* ==========================================================================
+   ESTILOS ROMPECABEZAS DE 15 PIEZAS
+   ========================================================================== */
+.puzzle15-page {
+    padding: 36px 0 70px;
+}
+
+.puzzle15-topbar {
+    background: var(--bg-white);
+    border: 1px solid var(--primary-100);
+    border-radius: var(--border-radius-lg);
+    padding: 20px 24px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.puzzle15-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.puzzle15-badge-count {
+    background: var(--primary-100);
+    color: var(--primary-900);
+    font-weight: 800;
+    padding: 8px 14px;
+    border-radius: var(--border-radius-full);
+    font-size: 0.9rem;
+}
+
+.puzzle15-main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 310px;
+    gap: 22px;
+    align-items: start;
+}
+
+@media (max-width: 980px) {
+    .puzzle15-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.puzzle15-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    background: #e2e8f0;
+    border: 3px solid var(--primary-800);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.puzzle15-board.assembled {
+    border-color: var(--primary-600);
+    box-shadow: var(--shadow-lg);
+}
+
+.puzzle15-slot {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed rgba(20, 83, 45, 0.35);
+    background: rgba(255, 255, 255, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.puzzle15-board.assembled .puzzle15-slot {
+    border: none;
+}
+
+.puzzle15-slot.drag-over {
+    background: rgba(187, 247, 208, 0.75);
+    border: 2px solid var(--primary-600);
+}
+
+.puzzle15-slot-num {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #64748b;
+    pointer-events: none;
+    user-select: none;
+}
+
+.puzzle15-piece {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 500% 300%;
+    cursor: grab;
+    position: relative;
+    user-select: none;
+    touch-action: manipulation;
+}
+
+.puzzle15-piece:active {
+    cursor: grabbing;
+}
+
+.puzzle15-piece.selected {
+    outline: 3px solid #2563eb;
+    z-index: 3;
+}
+
+.puzzle15-piece-tag {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: rgba(20, 83, 45, 0.85);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 1px 6px;
+    border-radius: 6px;
+    pointer-events: none;
+}
+
+.puzzle15-board.assembled .puzzle15-piece-tag {
+    display: none;
+}
+
+.puzzle15-side-card {
+    background: var(--bg-white);
+    border: 1px solid var(--primary-100);
+    border-radius: var(--border-radius-md);
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.puzzle15-side-card h2 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--primary-900);
+    margin-bottom: 10px;
+}
+
+.puzzle15-tray {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    max-height: 410px;
+    overflow-y: auto;
+    padding-right: 2px;
+}
+
+.puzzle15-tray-item {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid var(--primary-200);
+    background: var(--cream-50);
+}
+
+.puzzle15-ref-img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--primary-100);
+    display: block;
+}
+
+.puzzle15-win-box {
+    display: none;
+    margin-top: 16px;
+    background: var(--primary-900);
+    color: #fff;
+    padding: 16px 20px;
+    border-radius: var(--border-radius-md);
+    font-weight: 700;
+}

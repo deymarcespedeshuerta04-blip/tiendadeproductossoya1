@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raiz - Leche de Soya 100% Natural</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header / Navbar -->
+    <header class="header">
+        <div class="container header-content">
+            <a href="#inicio" class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.4 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>
+                </div>
+                <div>
+                    <div class="logo-text">Ra<span>iz</span></div>
+                    <span class="logo-sub">Nutrición Vegetal</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#catalogo">Productos</a>
+                <a href="#recetas">Recetas</a>
+                <a href="#inicio">Inicio</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#empresas-soya-sc">Empresas SC</a>
+                <a href="rompecabezas-raiz.html">Rompecabezas</a>
+                <a href="#nosotros">Nosotros</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="cart-trigger" id="openCartBtn" aria-label="Abrir carrito">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                    <span>Carrito</span>
+                    <span class="cart-count-badge" id="cartBadge">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú móvil">☰</button>
+            </div>
+        </div>
+
+        <!-- Menú Mobile -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#catalogo">Productos</a></li>
+                <li><a href="#recetas">Recetas</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Catálogo de Productos -->
+    <section id="catalogo" class="catalog">
+        <div class="container">
+            <div class="catalog-header">
+                <div>
+                    <span class="badge badge-primary">🌱 100% Base Soya Artesanal</span>
+                    <h2 class="section-title">Nuestros Productos a Base de Soya</h2>
+                    <p class="section-subtitle">Alimentos naturales elaborados diariamente con grano de soya seleccionado: alta proteína vegetal, sin lactosa y llenos de nutrientes esenciales.</p>
+                </div>
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-category="todos">Todos</button>
+                    <button class="filter-btn" data-category="leches">Leches</button>
+                    <button class="filter-btn" data-category="derivados">Asaditos & Tofu</button>
+                    <button class="filter-btn" data-category="bocadillos">Snacks</button>
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsContainer">
+                <!-- Se poblará vía JavaScript -->
+            </div>
+
+            <!-- Información detallada de beneficios de cada producto a base de soya -->
+            <div class="soy-benefits-guide" id="soyBenefitsGuide">
+                <div class="soy-guide-header">
+                    <span class="badge badge-primary">Propiedades Nutricionales de la Soya</span>
+                    <h3>Beneficios de Cada Producto</h3>
+                    <p>Conoce el aporte nutricional y los beneficios específicos de nuestros alimentos artesanales a base de soya.</p>
+                </div>
+                <div class="soy-guide-grid" id="productBenefitsDetailContainer">
+                    <!-- Se poblará dinámicamente vía JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Recetas de cada producto del catálogo -->
+    <section id="recetas" class="recipes-section">
+        <div class="container">
+            <div class="catalog-header">
+                <div>
+                    <span class="badge badge-primary">👩‍🍳 Recetario Artesanal Raiz</span>
+                    <h2 class="section-title">Recetas de Nuestros Productos de Soya</h2>
+                    <p class="section-subtitle">Aprende cómo preparamos cada alimento de nuestro catálogo con ingredientes naturales y pasos sencillos.</p>
+                </div>
+                <div class="filter-tabs" id="recipeFilterTabs">
+                    <button class="filter-btn recipe-filter-btn active" data-category="todos">Todas</button>
+                    <button class="filter-btn recipe-filter-btn" data-category="leches">Leches</button>
+                    <button class="filter-btn recipe-filter-btn" data-category="derivados">Asaditos & Tofu</button>
+                    <button class="filter-btn recipe-filter-btn" data-category="bocadillos">Snacks</button>
+                </div>
+            </div>
+
+            <div class="recipes-grid" id="recipesContainer">
+                <!-- Se poblará dinámicamente vía JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="badge badge-primary">🌿 100% Orgánico & Artesanal</span>
+                <h1 class="hero-title">El poder natural de la <span>Leche de Soya</span> en tu hogar</h1>
+                <p class="hero-description">Disfruta de una alternativa vegetal suave, libre de lactosa, rica en proteínas y preparada diariamente con soya seleccionada no-GMO.</p>
+
+                <div class="hero-buttons">
+                    <a href="#catalogo" class="btn btn-primary">Ver Catálogo de Productos</a>
+                    <a href="#beneficios" class="btn btn-outline">Beneficios</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div>
+                        <span class="stat-val">100%</span>
+                        <span class="stat-lbl">Origen Vegetal</span>
+                    </div>
+                    <div>
+                        <span class="stat-val">0%</span>
+                        <span class="stat-lbl">Sin Lactosa</span>
+                    </div>
+                    <div>
+                        <span class="stat-val">9g</span>
+                        <span class="stat-lbl">Proteína / Vaso</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <div class="hero-image-card">
+                    <img src="LECHE DE SOYA.jfif" alt="Leche de Soya Natural Raiz">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Beneficios -->
+    <section id="beneficios" class="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge badge-primary">Nutrición Consciente</span>
+                <h2 class="section-title">¿Por qué elegir Raiz?</h2>
+                <p class="section-subtitle">Alimentos sanos, sabrosos y producidos con estándares de máxima calidad.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                    </div>
+                    <h3>Salud Cardiovascular</h3>
+                    <p>Baja en grasas saturadas y totalmente libre de colesterol. Apoya el bienestar de tu corazón.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Digestión Ligera</h3>
+                    <p>100% libre de lactosa. Dile adiós a la pesadez e inflamación digestiva cotidiana.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/></svg>
+                    </div>
+                    <h3>Proteína Completa</h3>
+                    <p>Contiene todos los aminoácidos esenciales necesarios para mantener tus músculos y energía diarios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página / Nosotros -->
+        <!-- Sección Empresas de Soya en Santa Cruz -->
+    <section id="empresas-soya-sc" class="soy-companies-section">
+        <div class="container">
+            <div class="catalog-header">
+                <div>
+                    <span class="badge badge-primary">🏭 Directorio Agroindustrial & Comercial</span>
+                    <h2 class="section-title">Empresas de Productos de Soya en Santa Cruz</h2>
+                    <p class="section-subtitle">Empresas procesadoras, distribuidoras y productores de soya y derivados con ubicaciones reportadas en el departamento de Santa Cruz.</p>
+                </div>
+                <div class="filter-tabs" id="scCompanyFilterTabs">
+                    <button type="button" class="filter-btn sc-filter-btn active" data-sc-zone="todas">Todas</button>
+                    <button type="button" class="filter-btn sc-filter-btn" data-sc-zone="sc-sierra">Santa Cruz de la Sierra</button>
+                    <button type="button" class="filter-btn sc-filter-btn" data-sc-zone="norte-montero">Norte / Montero / Pailón</button>
+                </div>
+            </div>
+
+            <div class="sc-companies-grid" id="scCompaniesContainer">
+                <!-- Se poblará vía JavaScript -->
+            </div>
+        </div>
+    </section>
+
+<footer id="nosotros" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-logo">Raiz</div>
+                    <p>Productos artesanales de soya fresca elaborados diariamente para promover una vida saludable y equilibrada.</p>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="#catalogo">Catálogo</a></li>
+                        <li><a href="#recetas">Recetas</a></li>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Contacto</h4>
+                    <ul class="footer-links">
+                        <li>📍 Av. Principal #123</li>
+                        <li>📞 +591 64530039</li>
+                        <li>✉️ pedidos@raiz.com</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="footer-title">Configuración</h4>
+                    <p class="footer-config-text">Configura el WhatsApp que recibirá tus pedidos:</p>
+                    <button class="btn btn-outline btn-config-whatsapp" id="openConfigBtn">⚙️ Ajustar WhatsApp</button>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Raiz. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sidebar Carrito -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <div class="cart-title">Tu Carrito de Compras</div>
+            <button class="close-cart" id="closeCartBtn" aria-label="Cerrar carrito">✕</button>
+        </div>
+
+        <div class="cart-body" id="cartItemsContainer">
+            <!-- Items del carrito -->
+        </div>
+
+        <div class="cart-footer" id="cartFooter">
+            <div class="cart-summary-line">
+                <span>Subtotal:</span>
+                <span id="cartSubtotal" class="cart-subtotal-val">Bs 0.00</span>
+            </div>
+            <div class="cart-summary-line cart-total-line">
+                <span>Total:</span>
+                <span id="cartTotal">Bs 0.00</span>
+            </div>
+            <button type="button" class="btn btn-outline btn-qr-cart" id="openQrFromCartBtn">
+                🔳 Ver QR Estático de Pago (Bs)
+            </button>
+            <button class="btn btn-whatsapp btn-checkout-trigger" id="checkoutBtn">
+                💬 Pedir y Cobrar por WhatsApp
+            </button>
+        </div>
+    </aside>
+
+    <!-- Modal Código QR Estático de Pago -->
+    <div class="modal" id="qrPaymentModal">
+        <div class="modal-content qr-modal-content">
+            <h3 class="modal-title">Código QR Estático de Pago</h3>
+            <p class="modal-subtitle">Escanea nuestro QR oficial de <strong>Raiz Nutrición Vegetal</strong>, ingresa el monto de tu pedido en tu app bancaria y envía tu comprobante al WhatsApp <strong>+591 76312731</strong>.</p>
+
+            <div class="qr-preview-box" id="qrPreviewBox">
+                <div id="qrImageMount" class="qr-code-mount" aria-label="Código QR Estático Raiz"></div>
+                <div class="qr-amount-badge" id="qrAmountDisplay">Total del carrito: Bs 0.00</div>
+                <p class="qr-payload-text" id="qrPayloadText"></p>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="qrCustomerNameInput">Tu Nombre (Opcional)</label>
+                <input type="text" id="qrCustomerNameInput" class="form-input" placeholder="Ej: Carlos Mamani">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="qrConceptInput">Detalle del Pedido</label>
+                <input type="text" id="qrConceptInput" class="form-input" readonly>
+            </div>
+
+            <button type="button" class="btn btn-whatsapp btn-modal-submit" id="sendQrWhatsappBtn">
+                📲 Enviar Comprobante QR al +591 76312731
+            </button>
+            <button type="button" class="btn btn-outline btn-modal-cancel" id="closeQrModalBtn">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Modal Formulario Checkout WhatsApp -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <h3 class="modal-title">Finalizar Pedido por WhatsApp</h3>
+            <p class="modal-subtitle">Ingresa los datos para que coordinemos el pago y envío de tu compra.</p>
+
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label class="form-label" for="custName">Nombre Completo *</label>
+                    <input type="text" id="custName" class="form-input" required placeholder="Ej: Maria Lopez">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="custPhone">Teléfono de Contacto *</label>
+                    <input type="tel" id="custPhone" class="form-input" required placeholder="Ej: 71234567">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="custAddress">Dirección de Entrega *</label>
+                    <input type="text" id="custAddress" class="form-input" required placeholder="Ej: Calle Los Olivos #450">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="custPayment">Método de Pago *</label>
+                    <select id="custPayment" class="form-select" required>
+                        <option value="Pago por QR Estático / Banca Móvil">Pago por QR Estático / Banca Móvil</option>
+                        <option value="Transferencia Bancaria">Transferencia Bancaria</option>
+                        <option value="Efectivo contra entrega">Efectivo contra entrega</option>
+                    </select>
+                </div>
+
+                <!-- Vista previa del QR Estático dentro del Checkout -->
+                <div class="checkout-static-qr-box" id="checkoutStaticQrBox">
+                    <p class="checkout-qr-title">🔳 Escanea este QR Estático para pagar tu pedido:</p>
+                    <div id="checkoutQrMount" class="checkout-qr-mount" aria-label="QR Estático de Pago Raiz"></div>
+                    <span class="checkout-qr-total" id="checkoutQrTotalLabel">Monto a transferir: Bs 0.00</span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="custNotes">Notas Adicionales</label>
+                    <textarea id="custNotes" class="form-textarea" rows="2" placeholder="Ej: Entregar por las mañanas"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-whatsapp btn-modal-submit">
+                    🚀 Enviar Pedido a WhatsApp
+                </button>
+                <button type="button" class="btn btn-outline btn-modal-cancel" id="closeCheckoutBtn">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Configuración Número de WhatsApp -->
+    <div class="modal" id="configModal">
+        <div class="modal-content">
+            <h3 class="modal-title">Configurar WhatsApp Recepción</h3>
+            <p class="modal-subtitle">Escribe el número telefónico (con código de país sin el signo '+') a donde llegarán las órdenes.</p>
+
+            <div class="form-group">
+                <label class="form-label" for="storePhoneInput">Número de WhatsApp</label>
+                <input type="text" id="storePhoneInput" class="form-input" placeholder="Ej: 59176312731">
+            </div>
+
+            <button class="btn btn-primary btn-modal-full" id="saveConfigBtn">Guardar Número</button>
+            <button class="btn btn-outline btn-modal-cancel" id="closeConfigBtn">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Producto agregado al carrito</div>
+
+    <!-- Scripts JS -->
+    <script src="script.js"></script>
+</body>
+</html>
